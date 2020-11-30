@@ -8,6 +8,12 @@
     </div>
   </form>
 
+
+  <button class="btn btn-success" (click)="showForm()" >Add Product</button>
+
+  <!-- Form add product  -->
+  <app-add-product (eventSaveProduct)="pushProduct($event)" *ngIf="!hideForm"></app-add-product>
+
   <!-- Créer plusieurs objets -->
   <div class="row">
     <app-product *ngFor="let p of listProduct" [product]="p"

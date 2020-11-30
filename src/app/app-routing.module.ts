@@ -6,11 +6,13 @@ import {EventComponent} from './event/event.component';
 import {UserComponent} from './user/user.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {DisplayListProductComponent} from './display-list-product/display-list-product.component';
+import {AddProductComponent} from './add-product/add-product.component';
 
 
 const ROUTES: Routes=[
   {path:'home',component: HomeComponent},
   {path:'product',component: DisplayListProductComponent},
+  {path:'addproduct',component: AddProductComponent },
   {path:'event',component: EventComponent},
   {path:'user',component: UserComponent},
   {path:'',component: HomeComponent},

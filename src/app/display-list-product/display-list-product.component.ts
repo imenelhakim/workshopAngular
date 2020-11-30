@@ -15,12 +15,26 @@ export class DisplayListProductComponent implements OnInit {
   // @Output() notification = new EventEmitter<Product>();
 
   listProduct: Product[];
+
   title: string;
   priceMax:number;
+
+  //button hide form
+  hideForm:boolean;
+  //show form
+  showForm(){
+    if (this.hideForm==true){
+      this.hideForm=false;
+    }
+    else
+      this.hideForm=true;
+  }
+
   constructor() {
   }
 
   ngOnInit(): void {
+    this.hideForm=true;
     this.title = 'Product list';
     this.listProduct = [
       {
@@ -54,6 +68,11 @@ export class DisplayListProductComponent implements OnInit {
     this.listProduct[i].quantity--;
   }
 
+  pushProduct(p:Product){
+    this.listProduct.push(p);
+    this.hideForm=true;
+  }
+
   // incrementLike(i:number){
   //   this.listProduct[i].likes++;
   // }
@@ -67,3 +86,5 @@ export class DisplayListProductComponent implements OnInit {
 // sendNotif(){
 //   this.notification.emit(this.p);
 // }
+
+

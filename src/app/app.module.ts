@@ -12,7 +12,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {FormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { DisplayListProductComponent } from './display-list-product/display-list-product.component';
-// @ts-ignore
+import { AddProductComponent } from './add-product/add-product.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { DisplayListProductComponent } from './display-list-product/display-list
     PageNotFoundComponent,
     FooterComponent,
     DisplayListProductComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
