@@ -4,5 +4,6 @@ export class Product {
   category:string;
   description:string;
   price:number;
+  quantity:number;
   likes:number;
 }

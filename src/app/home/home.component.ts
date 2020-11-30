@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  titleHome = 'Nawara';
-  paragraph = 'The first online bouquets shop in Tunisia !';
+  titleHome:string;
+  paragraph:string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.titleHome='Nawara';
+    this.paragraph= 'The first online bouquets shop in Tunisia !';
   }
 
 }

@@ -9,6 +9,7 @@ import { UserComponent } from './user/user.component';
 import { ProductComponent } from './product/product.component';
 import { EventComponent } from './event/event.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {FormsModule} from '@angular/forms';
 
 // @ts-ignore
 @NgModule({
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   exports: [
