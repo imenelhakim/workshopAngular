@@ -1,6 +1,6 @@
 <div class="container">
-  <p>Product works!</p>
-
+<!--  <p>Product works!</p>-->
+  <div class="col-md-3" *ngIf="product.price <= priceMaxInput || priceMaxInput==null">
   <div class="card" style="width: 18rem;">
     <img src="assets/yes.jpg" class="card-img-top" alt="...">
     <div class="card-body">
@@ -8,12 +8,12 @@
       <p class="card-text">{{product.description}}</p>
       <h6 class="card-text">Category: {{product.category}}</h6>
       <h6 class="card-text">Price: {{product.price}}</h6>
-      <td><button class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{product.likes}}</button></td>
-      <td><button class="btn btn-primary"style="border-radius: 20px;">Buy {{product.quantity}}</button></td>
+      <td><button (click)="sendNotif()" class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{product.likes}}</button></td>
+      <td><button (click)="sendNotifDecrement()" [disabled]="product.quantity==0" class="btn btn-primary"style="border-radius: 20px;">Buy {{product.quantity}}</button></td>
       <p class="card-text">{{product.id}}</p>
     </div>
   </div>
-
+  </div>
       <!--  <div class="col-md-3" *ngIf="p.productName==searchProduct || searchProduct==null|| searchProduct==''">-->
 <!--    <div class="col-md-3">-->
 <!--      <div class="card" style="width: 18rem;">-->

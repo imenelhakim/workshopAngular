@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../model/product';
 
 
@@ -15,6 +15,13 @@ export class ProductComponent implements OnInit {
   //go to display-list-component.html
   @Input() product:Product; //interaction html>ts
 
+  //envoyer un output au parent
+  @Output() notification = new EventEmitter<Product>();
+  @Output() notificationDecrement = new EventEmitter<Product>();
+
+  //recherche
+  @Input() priceMaxInput:number;
+
 
   searchProduct: string;
 
@@ -23,6 +30,16 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  //passer l'objet au parent
+  sendNotif(){
+    this.notification.emit(this.product);
+  }
+
+  sendNotifDecrement(){
+    this.notificationDecrement.emit(this.product);
+  }
+
 
   // incrementLike(i: number){
   //     this.listProduct[i].likes++;
