@@ -10,7 +10,8 @@ import { ProductComponent } from './product/product.component';
 import { EventComponent } from './event/event.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {FormsModule} from '@angular/forms';
-
+import { FooterComponent } from './footer/footer.component';
+import { DisplayListProductComponent } from './display-list-product/display-list-product.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import {FormsModule} from '@angular/forms';
     UserComponent,
     ProductComponent,
     EventComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FooterComponent,
+    DisplayListProductComponent,
   ],
   imports: [
     BrowserModule,

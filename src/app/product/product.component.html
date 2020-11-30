@@ -1,35 +1,43 @@
-<p>product works!</p>
+<div class="container">
+  <p>Product works!</p>
 
-<form>
-  <div class="form-group">
-    <label>Search User:</label>
-    <input type="text" [(ngModel)]="searchProduct" name="searchProduct" class="form-control">
-  </div>
-</form>
-
-<div *ngFor="let p of listProduct; let i=index">
-<div class="col-md-3" *ngIf="p.productName==searchProduct || searchProduct==''" >
-  <div class="col-md-3">
-    <div class="card" style="width: 18rem;">
-      {{p.id}}
-      <img src="assets/bouquet.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <button class="btn btn-primary" style="border-radius: 15px;border-color: #42d6d2;background-color: #42d6d2" [disabled]="p.quantity==0">
-          Buy
-        </button>
-        <h5 class="card-title">{{p.productName}}</h5>
-        <p class="card-text">{{p.category}}</p>
-        <p class="card-text">{{p.price}}</p>
-        <p class="card-text">{{p.quantity}}</p>
-
-        <!-- Event Binding-->
-        <button (click)="incrementLike(i)" class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{p.likes}}</button>
-
-        <button  class="btn btn-primary"style="border-radius: 20px;border-color: #79518b;background-color: #79518b"> Update</button>
-        <button  class="btn btn-primary"style="border-radius: 20px;border-color: black;background-color: black"> Delete</button>
-<!--        (click)="delete(user.id)"-->
-      </div>
+  <div class="card" style="width: 18rem;">
+    <img src="assets/yes.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.productName}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <h6 class="card-text">Category: {{product.category}}</h6>
+      <h6 class="card-text">Price: {{product.price}}</h6>
+      <td><button class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{product.likes}}</button></td>
+      <td><button class="btn btn-primary"style="border-radius: 20px;">Buy {{product.quantity}}</button></td>
+      <p class="card-text">{{product.id}}</p>
     </div>
   </div>
-</div>
+
+      <!--  <div class="col-md-3" *ngIf="p.productName==searchProduct || searchProduct==null|| searchProduct==''">-->
+<!--    <div class="col-md-3">-->
+<!--      <div class="card" style="width: 18rem;">-->
+<!--        {{p.id}}-->
+<!--        <img src="assets/bouquet.png" class="card-img-top" alt="...">-->
+<!--        <div class="card-body">-->
+<!--          <button class="btn btn-primary" style="border-radius: 15px;border-color: #42d6d2;background-color: #42d6d2" [disabled]="p.quantity==0">-->
+<!--            Buy-->
+<!--          </button>-->
+<!--          <h5 class="card-title">{{p.productName}}</h5>-->
+<!--          <p class="card-text">{{p.category}}</p>-->
+<!--          <p class="card-text">{{p.price}}</p>-->
+<!--          <p class="card-text">{{p.quantity}}</p>-->
+
+<!--          &lt;!&ndash; Event Binding&ndash;&gt;-->
+<!--          <button (click)="incrementLike(i)" class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{p.likes}}</button>-->
+
+<!--          <button  class="btn btn-primary"style="border-radius: 20px;border-color: #79518b;background-color: #79518b"> Update</button>-->
+<!--          <button  class="btn btn-primary"style="border-radius: 20px;border-color: black;background-color: black"> Delete</button>-->
+<!--          <a [routerLink]="['p',p.id]" class="btn btn-info"style="border-radius: 20px; ">Details</a>-->
+<!--          &lt;!&ndash;        (click)="delete(user.id)"&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <br><br><br>
 </div>

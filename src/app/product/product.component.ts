@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../../../model/product';
 
 
@@ -9,22 +9,24 @@ import {Product} from '../../../model/product';
 })
 export class ProductComponent implements OnInit {
 
-  listProduct:Product[];
+  //objet de type Product
+  //le role de ce composant est de lire les données de cet objet
+  //@Input depuis display-list-component
+  //go to display-list-component.html
+  @Input() product:Product; //interaction html>ts
+
+
   searchProduct: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.listProduct = [
-      { id: 1, productName: 'bouquet de rose', category: 'Mariage', description: 'Ce bouquet illuminera votre soirée', price: 125, quantity: 150, likes: 0},
-       {id: 2, productName: 'bouquet de tulipes', category: 'Anniversaire', description: 'Ce bouquet apportera de la joix', price: 50, quantity: 150, likes: 0}
-    ];
 
   }
 
-  incrementLike(i: number){
-      this.listProduct[i].likes++;
-      //
-  }
+  // incrementLike(i: number){
+  //     this.listProduct[i].likes++;
+  //     //
+  // }
 
 }
