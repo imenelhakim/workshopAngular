@@ -1,0 +1,63 @@
+<div class="container">
+  <p>add-event works! <small class="text-muted"> Reactive form</small></p>
+    <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
+
+      <!--ID-->
+      <div class="form-group">
+        <input type="number" class="form-control" placeholder="Event ID.." formControlName="idEvent">
+      </div>
+      <div class="alert alert-danger" *ngIf="addEventForm.get('idEvent').errors && addEventForm.controls['idEvent'].touched">
+        <div *ngIf="addEventForm.get('idEvent').hasError('required')">Id is required</div>
+      </div>
+
+      <!--Event name-->
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Event name.." formControlName="nomEvent">
+      </div>
+      <div class="alert alert-danger" *ngIf="addEventForm.controls['nomEvent'].errors && addEventForm.controls['nomEvent'].touched">
+        <div *ngIf="addEventForm.get('nomEvent').hasError('required')">Event name is required</div>
+        <div *ngIf="addEventForm.get('nomEvent').hasError('minlength')">Event name must have at least 5 characters</div>
+      </div>
+
+      <!--Event place-->
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Event place.." formControlName="lieuEvent">
+      </div>
+      <div class="alert alert-danger" *ngIf="addEventForm.controls['lieuEvent'].errors && addEventForm.controls['lieuEvent'].touched">
+        <div *ngIf="addEventForm.get('lieuEvent').hasError('required')">Event place is required</div>
+        <div *ngIf="addEventForm.get('lieuEvent').hasError('minlength')">Event place must have at least 5 characters</div>
+      </div>
+
+      <!--Event desc-->
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Event description.." formControlName="descriptionEvent">
+      </div>
+      <div class="alert alert-danger" *ngIf="addEventForm.controls['descriptionEvent'].errors &&addEventForm.controls['descriptionEvent'].touched">
+        <div *ngIf="addEventForm.get('descriptionEvent').hasError('required')">Event description is required</div>
+        <div *ngIf="addEventForm.get('descriptionEvent').hasError('minlength')">Event description must have at least 10 characters</div>
+      </div>
+
+      <!--Event guests number-->
+      <div class="form-group">
+        <input type="number" class="form-control" placeholder="Participants number.." formControlName="nbGuestsEvent">
+      </div>
+      <div class="alert alert-danger" *ngIf="addEventForm.controls['nbGuestsEvent'].errors && addEventForm.controls['nbGuestsEvent'].touched">
+        <div *ngIf="addEventForm.get('nbGuestsEvent').hasError('required')">Participants number is required and must be a number</div>
+      </div>
+
+      <!--price-->
+      <div class="form-group">
+        <input type="number" class="form-control" placeholder="Event price.." formControlName="priceEvent">
+      </div>
+      <div class="alert alert-danger" *ngIf="addEventForm.controls['priceEvent'].errors && addEventForm.controls['priceEvent'].touched">
+        <div *ngIf="addEventForm.get('priceEvent').hasError('required')">Event price is required and must be a number</div>
+      </div>
+
+
+      <button class="btn btn-success" [disabled]="addEventForm.invalid">Add Event</button>
+      <button class="btn btn-danger" (click)="hideFormAdd()">Cancel</button>
+      <!--      <button class="btn btn-danger" (click)="reset()">Cancel</button>-->
+
+    </form>
+
+</div>
