@@ -3,6 +3,6 @@ export class Event {
   eventName:string;
   place:string;
   description:string;
-  guests:number
+  guestsNumber:number
   price:number;
 }

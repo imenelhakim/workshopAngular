@@ -73,6 +73,7 @@ export class DisplayListProductComponent implements OnInit {
     this.hideForm=true;
   }
 
+
   // incrementLike(i:number){
   //   this.listProduct[i].likes++;
   // }
