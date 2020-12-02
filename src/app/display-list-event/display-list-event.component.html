@@ -8,14 +8,11 @@
     </div>
   </form>
 
-
     <button class="btn btn-success" (click)="showForm()" >Add Event</button>
-
 <!--   Form add Event  -->
     <app-add-event *ngIf="!hideForm"
                    (notifHide)="hideFormAdd()"
     >
-
     </app-add-event>
 <!--  (eventSaveProduct)="pushProduct($event)"-->
 

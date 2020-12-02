@@ -6,4 +6,6 @@
   margin-top: 50px;
 }
 
-
+.form-control,.btn{
+  border-radius: 20px;
+}
