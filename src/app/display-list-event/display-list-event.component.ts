@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Event} from '../../../model/event';
+import {EventService} from '../shared/event.service';
 
 @Component({
   selector: 'app-display-list-event',
@@ -30,22 +31,13 @@ export class DisplayListEventComponent implements OnInit {
     this.hideForm=true;
   }
 
-  constructor() {
+  constructor(private serviceEvent: EventService) {
   }
 
   ngOnInit(): void {
     this.hideForm=true;
     this.title = 'Product list';
-    this.listEvent = [
-      {
-        id:1,
-        eventName:'Formation parfum',
-        place:'Ariana',
-        description:'Apprenez à créer vos propres parfums',
-        guestsNumber:20,
-        price:25
-      }
-    ];
+    this.listEvent=this.serviceEvent.getEvents();
   };
 
   pushEvent(e:Event){

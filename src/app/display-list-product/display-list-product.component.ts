@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 // import {Component, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../model/product';
+import {ProductService} from '../shared/product.service';
 // import {EventEmitter} from 'events';
 
 @Component({
@@ -16,6 +17,7 @@ export class DisplayListProductComponent implements OnInit {
 
   listProduct: Product[];
 
+
   title: string;
   priceMax:number;
 
@@ -30,32 +32,14 @@ export class DisplayListProductComponent implements OnInit {
       this.hideForm=true;
   }
 
-  constructor() {
+  constructor(private serviceProduct: ProductService) {
   }
 
   ngOnInit(): void {
     this.hideForm=true;
     this.title = 'Product list';
-    this.listProduct = [
-      {
-        id: 1,
-        productName: 'bouquet de rose',
-        category: 'Mariage',
-        description: 'Ce bouquet illuminera votre soirée',
-        price: 125,
-        quantity: 150,
-        likes: 0
-      },
-      {
-        id: 2,
-        productName: 'bouquet de tulipes',
-        category: 'Anniversaire',
-        description: 'Ce bouquet apportera de la joix',
-        price: 50,
-        quantity: 8,
-        likes: 0
-      }
-    ];
+    this.listProduct = this.serviceProduct.getProducts();
+
   };
 
   incrementLike(product:Product){
@@ -71,6 +55,10 @@ export class DisplayListProductComponent implements OnInit {
   pushProduct(p:Product){
     this.listProduct.push(p);
     this.hideForm=true;
+  }
+
+  getStat(){
+    //parcours de la liste / donne les produits prix > 100
   }
 
 
