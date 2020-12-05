@@ -16,6 +16,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { DisplayListEventComponent } from './display-list-event/display-list-event.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { DisplayDetailEventComponent } from './display-detail-event/display-detail-event.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DisplayDetailEventComponent } from './display-detail-event/display-deta
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   exports: [

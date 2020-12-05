@@ -1,0 +1,41 @@
+{
+  "products": [
+    {
+      "productName": "Bouquet de roses",
+      "category": "Special Occasion",
+      "description": "For your loved ones",
+      "quantity": 15,
+      "price": 50,
+      "likes": 0,
+      "id": 1
+    },
+    {
+      "productName": "Bouquet de lilas",
+      "category": "Special Occasion",
+      "description": "For your loved ones",
+      "quantity": 15,
+      "price": 50,
+      "likes": 0,
+      "id": 2
+    },
+    {
+      "productName": "sssssssssssss",
+      "category": "hjkldfghjkl",
+      "description": "hgjjkllmm",
+      "quantity": 545,
+      "price": 545,
+      "likes": 0,
+      "id": 3
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "eventName": "First Event ",
+      "place": "Ariana",
+      "description": "Ouverture officielle",
+      "guestsNumber": 15,
+      "price": 50
+    }
+  ]
+}

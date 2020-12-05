@@ -10,6 +10,8 @@
       <h6 class="card-text">Price: {{product.price}}</h6>
       <td><button (click)="sendNotif()" class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{product.likes}}</button></td>
       <td><button (click)="sendNotifDecrement()" [disabled]="product.quantity==0" class="btn btn-primary"style="border-radius: 20px;">Buy {{product.quantity}}</button></td>
+      <td><button class="btn btn-danger"style="border-radius: 20px;" (click)="delete(product.id)">Delete</button></td>
+<!--      <td><button class="btn btn-danger"style="border-radius: 20px;" (click)="deleteProduct(product.id)">Delete</button></td>-->
       <p class="card-text">{{product.id}}</p>
     </div>
   </div>

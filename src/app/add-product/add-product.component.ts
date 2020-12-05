@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../model/product';
+import {ProductService} from '../shared/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -8,7 +9,7 @@ import {Product} from '../../../model/product';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   id:number;
 
@@ -19,9 +20,14 @@ export class AddProductComponent implements OnInit {
 
   @Output() eventSaveProduct = new EventEmitter<Product>();
 
+  // save(){
+  //   this.product.likes=0;
+  //   this.eventSaveProduct.emit(this.product);
+  // }
+
   save(){
     this.product.likes=0;
-    this.eventSaveProduct.emit(this.product);
+    this.productService.postProduct(this.product).subscribe();
   }
 
 
@@ -52,7 +58,6 @@ export class AddProductComponent implements OnInit {
   //   ];
   //
   };
-
 
 }
 

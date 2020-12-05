@@ -17,6 +17,8 @@ export class DisplayListProductComponent implements OnInit {
 
   listProduct: Product[];
 
+  deleteId:number;
+
 
   title: string;
   priceMax:number;
@@ -25,11 +27,13 @@ export class DisplayListProductComponent implements OnInit {
   hideForm:boolean;
   //show form
   showForm(){
-    if (this.hideForm==true){
-      this.hideForm=false;
-    }
-    else
-      this.hideForm=true;
+    this.hideForm = this.hideForm != true;
+    // if (this.hideForm==true){
+    //   this.hideForm=false;
+    // }
+    // else
+    //   this.hideForm=true;
+
   }
 
   constructor(private serviceProduct: ProductService) {
@@ -38,7 +42,10 @@ export class DisplayListProductComponent implements OnInit {
   ngOnInit(): void {
     this.hideForm=true;
     this.title = 'Product list';
-    this.listProduct = this.serviceProduct.getProducts();
+    // this.listProduct = this.serviceProduct.getProducts();
+    this.serviceProduct.getProductsWS().subscribe(
+      (data:Product[])=>this.listProduct=data
+    );
 
   };
 
@@ -57,9 +64,29 @@ export class DisplayListProductComponent implements OnInit {
     this.hideForm=true;
   }
 
-  getStat(){
-    //parcours de la liste / donne les produits prix > 100
-  }
+
+
+
+
+
+
+
+  // deleteProduct(deleteId){
+  //   this.serviceProduct.deleteProduct(deleteId).subscribe(
+  //     ()=>this.listProduct=this.listProduct.filter(Product=>Product.id != deleteId)
+  //   );
+  // }
+
+  // deleteProduct(p:Product){
+  //   let i = this.listProduct.indexOf(p)+1;
+  //   this.serviceProduct.deleteProduct(i).subscribe(
+  //     ()=>this.listProduct=this.listProduct.filter(p=>p.id != i)
+  //   );
+  // }
+
+  // getStat(){
+  //   //parcours de la liste / donne les produits prix > 100
+  // }
 
 
   // incrementLike(i:number){

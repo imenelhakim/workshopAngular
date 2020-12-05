@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../model/product';
+import {ProductService} from '../shared/product.service';
 
 
 @Component({
@@ -22,10 +23,12 @@ export class ProductComponent implements OnInit {
   //recherche
   @Input() priceMaxInput:number;
 
+  //delete notif
+  @Output() notifDelete = new EventEmitter();
 
-  searchProduct: string;
+  // searchProduct: string;
 
-  constructor() { }
+  constructor(private serviceProduct: ProductService) { }
 
   ngOnInit(): void {
 
@@ -39,6 +42,14 @@ export class ProductComponent implements OnInit {
   sendNotifDecrement(){
     this.notificationDecrement.emit(this.product);
   }
+
+  delete(id){
+    this.serviceProduct.deleteProductWS(id).subscribe();
+  }
+
+  // deleteProduct(id){
+  //   this.serviceProduct.deleteProduct(id).subscribe();
+  // }
 
 
   // incrementLike(i: number){

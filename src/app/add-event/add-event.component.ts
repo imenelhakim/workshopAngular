@@ -1,5 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Event} from '../../../model/event';
+import {EventService} from '../shared/event.service';
 
 @Component({
   selector: 'app-add-event',
@@ -13,11 +15,18 @@ export class AddEventComponent implements OnInit {
 
   @Output() notifHide = new EventEmitter();
 
+  constructor(private eventService:EventService) { }
+
   hideForm:true;
+  event:Event;
 
   hideFormAdd(){
     //envoi notification au parent hideForm==false;
     this.notifHide.emit(this.hideForm);
+  }
+
+  save(){
+    this.eventService.postEvent(this.addEventForm.value).subscribe();
   }
 
   // idEvent = new FormControl('', Validators.required);
@@ -27,17 +36,18 @@ export class AddEventComponent implements OnInit {
   // nbGuestsEvent = new FormControl('');
   // priceEvent = new FormControl('');
 
-  constructor() { }
-
   ngOnInit(): void {
+
+    this.event = new Event();
+
     this.addEventForm = new FormGroup(
       {
-        idEvent:new FormControl('', Validators.required),
-        nomEvent:new FormControl('', [Validators.required, Validators.minLength(5)]),
-        lieuEvent:new FormControl('', [Validators.required, Validators.minLength(5)]),
-        descriptionEvent:new FormControl('', [Validators.required, Validators.minLength(10)]),
-        nbGuestsEvent:new FormControl('', Validators.required),
-        priceEvent:new FormControl('', Validators.required)
+        id:new FormControl(),
+        eventName:new FormControl('', [Validators.required, Validators.minLength(5)]),
+        place:new FormControl('', [Validators.required, Validators.minLength(5)]),
+        description:new FormControl('', [Validators.required, Validators.minLength(10)]),
+        guestsNumber:new FormControl('', Validators.required),
+        price:new FormControl('', Validators.required)
       }
     );
   }

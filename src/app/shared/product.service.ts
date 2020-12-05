@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Product} from '../../../model/product';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   listProductShare: Product[];
 
@@ -34,9 +36,21 @@ export class ProductService {
     return this.listProductShare;
   }
 
-  postProduct(){}
-  putProduct(){}
-  deleteProduct(){}
+  url='http://localhost:3000/products/';
+
+  //affichage
+  getProductsWS(){
+    return this.http.get<Product[]>(this.url);
+  }
+  //suppression
+  deleteProductWS(id){
+    return this.http.delete(this.url+id);
+  }
+  //ajout
+  postProduct(p:Product){
+    return this.http.post<Product>(this.url,p);
+  }
+
   searchProduct(){}
 
 }

@@ -4,7 +4,9 @@
   <br>
   <form>
     <div class="form-group" >
-        <input name="priceMax" type="number" class="form-control" placeholder="Search by price .." [(ngModel)]="priceMax">
+      <label>
+        <input name="priceMax" type="number" class="form-control" placeholder="Enter your budget .." [(ngModel)]="priceMax">
+      </label>
     </div>
   </form>
 
@@ -19,8 +21,9 @@
     <app-product *ngFor="let p of listProduct" [product]="p"
                  (notification)="incrementLike($event)"
                  [priceMaxInput]="priceMax"
-                 (notificationDecrement)="decrementQuantity($event)">
-
+                 (notificationDecrement)="decrementQuantity($event)"
+    >
+<!--                  (notifDelete)="deleteProduct($event)"-->
     </app-product>
   </div>
 
@@ -52,8 +55,6 @@
 <!--    </tr>-->
 <!--    </tbody>-->
 <!--  </table>-->
-
-
 
   <br><br><br>
 </div>
