@@ -10,17 +10,29 @@ import {Event} from '../../../model/event';
 })
 export class DisplayDetailEventComponent implements OnInit {
 
-  //injection de service
+
   constructor( private service: ActivatedRoute, private serviceEvent : EventService) { }
 
+  DetailEvent: Event;
+
   id:number;
-  listEvent: Event[];
 
   ngOnInit(): void {
+
     this.id=this.service.snapshot.params.id;
     console.log(this.service.snapshot.params.id);
-    this.listEvent = this.serviceEvent.getEvents();
-    console.log(this.serviceEvent.getEvents());
+
+    this.serviceEvent.getEventWS(this.id)
+      .subscribe((data: Event)=>{
+        this.DetailEvent = data;
+        console.log(this.DetailEvent);
+      })
+  }
+
+  update(id:number,e:Event){
+    this.serviceEvent.putEvent(id,e).subscribe();
+    console.log(this.DetailEvent);
   }
 
 }
+

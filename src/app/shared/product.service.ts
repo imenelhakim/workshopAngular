@@ -42,6 +42,7 @@ export class ProductService {
   getProductsWS(){
     return this.http.get<Product[]>(this.url);
   }
+
   //suppression
   deleteProductWS(id){
     return this.http.delete(this.url+id);

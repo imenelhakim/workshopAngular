@@ -19,22 +19,30 @@
       "id": 2
     },
     {
-      "productName": "sssssssssssss",
-      "category": "hjkldfghjkl",
-      "description": "hgjjkllmm",
-      "quantity": 545,
-      "price": 545,
+      "productName": "Bouquet de coquelicots",
+      "category": "fleuuurs",
+      "description": "ddndndndnjd",
+      "quantity": 45,
+      "price": 554,
       "likes": 0,
-      "id": 3
+      "id": 4
     }
   ],
   "events": [
     {
       "id": 1,
-      "eventName": "First Event ",
-      "place": "Ariana",
-      "description": "Ouverture officielle",
-      "guestsNumber": 15,
+      "eventName": "rrgsgsgssd",
+      "place": "rrgsgsgssd",
+      "description": "rrgsgsgssd",
+      "guestsNumber": 47,
+      "price": 951
+    },
+    {
+      "id": 2,
+      "eventName": "Formation parfum",
+      "place": "ariana",
+      "description": "la ville des roses vous offre une expérience unique!",
+      "guestsNumber": 20,
       "price": 50
     }
   ]
