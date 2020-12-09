@@ -7,6 +7,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {DisplayListProductComponent} from './display-list-product/display-list-product.component';
 import {DisplayListEventComponent} from './display-list-event/display-list-event.component';
 import {DisplayDetailEventComponent} from './display-detail-event/display-detail-event.component';
+import {DisplayDetailProductComponent} from './display-detail-product/display-detail-product.component';
 
 
 const ROUTES: Routes = [
@@ -14,6 +15,7 @@ const ROUTES: Routes = [
   {path: 'product', component: DisplayListProductComponent},
   {path: 'event', component: DisplayListEventComponent},
   {path: 'event/:id', component: DisplayDetailEventComponent},
+  {path: 'product/:id', component: DisplayDetailProductComponent},
   {path: 'user', component: UserComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}

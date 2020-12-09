@@ -4,7 +4,7 @@
     <div class="card" style="width: 18rem;">
       <img src="assets/yes.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{product.productName}}</h5>
+        <h5 class="card-title"><a [routerLink]="product.id">{{product.productName}}</a></h5>
         <p class="card-text">{{product.description}}</p>
         <h6 class="card-text">Category: {{product.category}}</h6>
         <h6 class="card-text">Price: {{product.price}}</h6>
@@ -21,7 +21,7 @@
           <button class="btn btn-danger" style="border-radius: 20px;" (click)="delete(product.id)">Delete</button>
         </td>
         <!--      <td><button class="btn btn-danger"style="border-radius: 20px;" (click)="deleteProduct(product.id)">Delete</button></td>-->
-        <p class="card-text">{{product.id}}</p>
+<!--        <p class="card-text">{{product.id}}</p>-->
       </div>
     </div>
   </div>

@@ -1,0 +1,90 @@
+<!--<small class="text-muted">Share the data please </small>-->
+
+<div class="container">
+
+  <small class="text-muted">display-detail-product works!</small>
+  <h1>Edit product</h1>
+  <!--Section: Block Content-->
+  <section class="mb-5">
+
+    <div class="row">
+      <div class="col-md-3 mb-4 mb-md-0">
+        <div id="mdb-lightbox-ui"></div>
+        <div class="mdb-lightbox">
+          <div class="row product-gallery mx-8">
+          </div>
+
+          <img src="assets/perfume.jpg" class="card-img" alt="...">
+
+        </div>
+
+      </div>
+      <div class="col-md-6">
+
+        <p class="mb-2 text-muted text-uppercase small"><small class="text-muted">ID: </small>{{this.DetailProduct.id}}
+        </p>
+        <h2><strong>{{this.DetailProduct.productName}}</strong></h2>
+        <div class="form-group"><strong>
+          <input type="text" class="form-control" [(ngModel)]="DetailProduct.productName"
+                 value="{{this.DetailProduct.productName}}"></strong>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless mb-2">
+            <tbody>
+            <tr>
+              <th class="pl-0 w-25" scope="row">Category:</th>
+              <td>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="DetailProduct.category"
+                         value="{{this.DetailProduct.category}}">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row">Description:</th>
+              <td>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="DetailProduct.description"
+                         value="{{this.DetailProduct.description}}">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row">Price:</th>
+              <td class="col-md-3">
+                <div class="form-group">
+                  <input type="number" class="form-control" [(ngModel)]="DetailProduct.price"
+                         value="{{this.DetailProduct.price}}">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row">Quantity:</th>
+              <td class="col-md-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="DetailProduct.quantity"
+                         value="{{this.DetailProduct.quantity}}">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row">Likes:</th>
+              <td class="col-md-3">
+                <div class="form-group">
+                  <input type="number" class="form-control" [(ngModel)]="DetailProduct.likes"
+                         value="{{this.DetailProduct.likes}}">
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+        <button type="button" class="btn btn-primary btn-md mr-1 mb-2" (click)="update()">Update</button>
+        <button type="button" class="btn btn-light btn-md mr-1 mb-2" routerLink="/product">Cancel</button>
+      </div>
+    </div>
+
+  </section>
+  <!--Section: Block Content-->
+</div>

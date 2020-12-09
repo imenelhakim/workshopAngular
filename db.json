@@ -5,7 +5,7 @@
       "category": "Special Occasion",
       "description": "For your loved ones",
       "quantity": 15,
-      "price": 50,
+      "price": 5055,
       "likes": 0,
       "id": 1
     },
@@ -15,7 +15,7 @@
       "description": "For your loved ones",
       "quantity": 15,
       "price": 50,
-      "likes": 0,
+      "likes": 20,
       "id": 2
     },
     {
@@ -44,7 +44,7 @@
       "place": "nabeul",
       "description": "la ville des roses vous offre une expérience unique!",
       "guestsNumber": 15,
-      "price": 120
+      "price": 122
     },
     {
       "id": 2,
