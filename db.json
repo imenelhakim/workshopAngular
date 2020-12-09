@@ -26,16 +26,25 @@
       "price": 554,
       "likes": 0,
       "id": 4
+    },
+    {
+      "productName": "dgdgsdfgdgdsg",
+      "category": "dsfgdfgdgdggf",
+      "description": "ddfgdfgddfdgf",
+      "quantity": 58,
+      "price": 58,
+      "likes": 0,
+      "id": 5
     }
   ],
   "events": [
     {
       "id": 1,
-      "eventName": "rrgsgsgssd",
-      "place": "rrgsgsgssd",
-      "description": "rrgsgsgssd",
-      "guestsNumber": 47,
-      "price": 951
+      "eventName": "Formation savon",
+      "place": "nabeul",
+      "description": "la ville des roses vous offre une expérience unique!",
+      "guestsNumber": 15,
+      "price": 120
     },
     {
       "id": 2,

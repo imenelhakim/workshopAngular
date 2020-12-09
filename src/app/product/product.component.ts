@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../model/product';
 import {ProductService} from '../shared/product.service';
+import Swal from "sweetalert2";
 
 
 @Component({
@@ -45,6 +46,7 @@ export class ProductComponent implements OnInit {
 
   delete(id){
     this.serviceProduct.deleteProductWS(id).subscribe();
+    Swal.fire('Hi', 'The product has been deleted!', 'success');
   }
 
   // deleteProduct(id){

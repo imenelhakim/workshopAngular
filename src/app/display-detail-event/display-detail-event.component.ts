@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {EventService} from '../shared/event.service';
 import {Event} from '../../../model/event';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-display-detail-event',
@@ -20,7 +21,7 @@ export class DisplayDetailEventComponent implements OnInit {
   ngOnInit(): void {
 
     this.id=this.service.snapshot.params.id;
-    console.log(this.service.snapshot.params.id);
+    // console.log(this.service.snapshot.params.id);
 
     this.serviceEvent.getEventWS(this.id)
       .subscribe((data: Event)=>{
@@ -29,10 +30,17 @@ export class DisplayDetailEventComponent implements OnInit {
       })
   }
 
-  update(id:number,e:Event){
-    this.serviceEvent.putEvent(id,e).subscribe();
+  update(){
+    this.serviceEvent.putEvent(this.DetailEvent).subscribe();
     console.log(this.DetailEvent);
+    Swal.fire('The event has been updated!', '---', 'success');
   }
+  // update(id:number,e:Event){
+  //   this.serviceEvent.putEvent(id,e).subscribe();
+  //   console.log(this.DetailEvent);
+  //   Swal.fire('The event has been updated!', '---', 'success');
+  // }
+
 
 }
 

@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Event} from '../../../model/event';
 import {FormControl} from '@angular/forms';
 import {EventService} from '../shared/event.service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-event',
@@ -21,7 +22,8 @@ export class EventComponent implements OnInit {
   }
 
   delete(id){
-        this.eventService.deleteEventWS(id).subscribe();
+    this.eventService.deleteEventWS(id).subscribe();
+    Swal.fire('The event has been deleted!', '---', 'success');
   }
 
 

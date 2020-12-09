@@ -1,5 +1,7 @@
 <div class="container">
-  <p>add-event works! <small class="text-muted"> Reactive form</small></p>
+    <small  class="text-muted">add-event works!</small>
+    <h1>Add Event</h1><br>
+    <!--  <p>add-event works! <small class="text-muted"> Reactive form</small></p>-->
     <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
 
       <!--Event name-->
@@ -45,11 +47,8 @@
         <div *ngIf="addEventForm.get('price').hasError('required')">Event price is required and must be a number</div>
       </div>
 
-
       <button class="btn btn-success" [disabled]="addEventForm.invalid" (click)="save()">Add Event</button>
       <button class="btn btn-danger" (click)="hideFormAdd()">Cancel</button>
       <!--      <button class="btn btn-danger" (click)="reset()">Cancel</button>-->
-
     </form>
-
 </div>

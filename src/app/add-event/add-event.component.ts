@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Event} from '../../../model/event';
 import {EventService} from '../shared/event.service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-add-event',
@@ -27,6 +28,7 @@ export class AddEventComponent implements OnInit {
 
   save(){
     this.eventService.postEvent(this.addEventForm.value).subscribe();
+    Swal.fire('The event has been added!', '---', 'success');
   }
 
   // idEvent = new FormControl('', Validators.required);

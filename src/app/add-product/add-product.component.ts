@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../model/product';
 import {ProductService} from '../shared/product.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-product',
@@ -28,6 +29,7 @@ export class AddProductComponent implements OnInit {
   save(){
     this.product.likes=0;
     this.productService.postProduct(this.product).subscribe();
+    Swal.fire('The product has been added!', '---', 'success');
   }
 
 

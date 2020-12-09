@@ -29,9 +29,6 @@ export class EventService {
 
   constructor(private http:HttpClient) { }
 
-
-
-
   // getEvents(){
   //   this.listEventShare = [
   //     {
@@ -68,11 +65,8 @@ export class EventService {
       )
   }
   //modification
-  httpOptions = { headers: new HttpHeaders({
-      'Content-Type': 'application/json'})}
-
-  putEvent(id:number,e:Event): Observable<Event>{
-    return this.http.put<Event>(this.url+id,e,this.httpOptions);
+  putEvent(event): Observable<Event> {
+    return this.http.put<Event>(this.url + event.id, event);
   }
 
   searchEvent(){}
