@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {HomeComponent} from './home/home.component';
 import {Routes, RouterModule} from '@angular/router';
 import {UserComponent} from './user/user.component';
@@ -9,14 +9,14 @@ import {DisplayListEventComponent} from './display-list-event/display-list-event
 import {DisplayDetailEventComponent} from './display-detail-event/display-detail-event.component';
 
 
-const ROUTES: Routes=[
-  {path:'home',component: HomeComponent},
-  {path:'product',component: DisplayListProductComponent},
-  {path:'event',component: DisplayListEventComponent},
-  {path:'event/:id',component: DisplayDetailEventComponent},
-  {path:'user',component: UserComponent},
-  {path:'',redirectTo:'/home',pathMatch:'full'},
-  {path:'**',component: PageNotFoundComponent}
+const ROUTES: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: 'product', component: DisplayListProductComponent},
+  {path: 'event', component: DisplayListEventComponent},
+  {path: 'event/:id', component: DisplayDetailEventComponent},
+  {path: 'user', component: UserComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -29,4 +29,5 @@ const ROUTES: Routes=[
     RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

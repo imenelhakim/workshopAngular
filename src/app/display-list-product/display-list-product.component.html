@@ -3,15 +3,16 @@
   <h1>{{title}}</h1>
   <br>
   <form>
-    <div class="form-group" >
+    <div class="form-group">
       <label>
-        <input name="priceMax" type="number" class="form-control" placeholder="Enter your budget .." [(ngModel)]="priceMax">
+        <input name="priceMax" type="number" class="form-control" placeholder="Enter your budget .."
+               [(ngModel)]="priceMax">
       </label>
     </div>
   </form>
 
 
-  <button class="btn btn-success" (click)="showForm()" >Add Product</button>
+  <button class="btn btn-success" (click)="showForm()">Add Product</button>
 
   <!-- Form add product  -->
   <app-add-product (eventSaveProduct)="pushProduct($event)" *ngIf="!hideForm"></app-add-product>
@@ -23,38 +24,37 @@
                  [priceMaxInput]="priceMax"
                  (notificationDecrement)="decrementQuantity($event)"
     >
-<!--                  (notifDelete)="deleteProduct($event)"-->
+      <!--                  (notifDelete)="deleteProduct($event)"-->
     </app-product>
   </div>
 
 
-
-<!--  <table border="2">-->
-<!--    &lt;!&ndash;Header&ndash;&gt;-->
-<!--    <tr>-->
-<!--      <th>id</th>-->
-<!--      <th>productName</th>-->
-<!--      <th>category</th>-->
-<!--      <th>description</th>-->
-<!--      <th>price</th>-->
-<!--      <th>quantity</th>-->
-<!--      <th>likes</th>-->
-<!--    </tr>-->
-<!--    &lt;!&ndash;Data&ndash;&gt;-->
-<!--    <tbody *ngFor="let p of listProduct; let i=index">-->
-<!--      <tr *ngIf="p.price < priceMax || priceMax==null "> &lt;!&ndash;pour chaque produit dans la liste de produit&ndash;&gt;-->
-<!--      &lt;!&ndash; interpolation simple&ndash;&gt;-->
-<!--      <td>{{p.id}}</td>-->
-<!--      <td>{{p.productName}}</td>-->
-<!--      <td>{{p.category}}</td>-->
-<!--      <td>{{p.description}}</td>-->
-<!--      <td>{{p.price}}</td>-->
-<!--      <td><button [disabled]="p.quantity==0" (click)="decrementQuatity(i)" class="btn btn-primary"style="border-radius: 20px;">Buy {{p.quantity}}</button></td>-->
-<!--      <td><button (click)="incrementLike(i)" class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{p.likes}}</button></td>-->
-<!--&lt;!&ndash;      (click)="incrementLike(i)"&ndash;&gt;-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
+  <!--  <table border="2">-->
+  <!--    &lt;!&ndash;Header&ndash;&gt;-->
+  <!--    <tr>-->
+  <!--      <th>id</th>-->
+  <!--      <th>productName</th>-->
+  <!--      <th>category</th>-->
+  <!--      <th>description</th>-->
+  <!--      <th>price</th>-->
+  <!--      <th>quantity</th>-->
+  <!--      <th>likes</th>-->
+  <!--    </tr>-->
+  <!--    &lt;!&ndash;Data&ndash;&gt;-->
+  <!--    <tbody *ngFor="let p of listProduct; let i=index">-->
+  <!--      <tr *ngIf="p.price < priceMax || priceMax==null "> &lt;!&ndash;pour chaque produit dans la liste de produit&ndash;&gt;-->
+  <!--      &lt;!&ndash; interpolation simple&ndash;&gt;-->
+  <!--      <td>{{p.id}}</td>-->
+  <!--      <td>{{p.productName}}</td>-->
+  <!--      <td>{{p.category}}</td>-->
+  <!--      <td>{{p.description}}</td>-->
+  <!--      <td>{{p.price}}</td>-->
+  <!--      <td><button [disabled]="p.quantity==0" (click)="decrementQuatity(i)" class="btn btn-primary"style="border-radius: 20px;">Buy {{p.quantity}}</button></td>-->
+  <!--      <td><button (click)="incrementLike(i)" class="btn btn-primary"style="border-radius: 20px;border-color: hotpink;background-color: hotpink">Like &hearts; {{p.likes}}</button></td>-->
+  <!--&lt;!&ndash;      (click)="incrementLike(i)"&ndash;&gt;-->
+  <!--    </tr>-->
+  <!--    </tbody>-->
+  <!--  </table>-->
 
   <br><br><br>
 </div>

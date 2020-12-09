@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Event} from '../../../model/event';
 import {EventService} from '../shared/event.service';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-event',
@@ -12,21 +12,22 @@ import Swal from "sweetalert2";
 export class AddEventComponent implements OnInit {
 
   //1- declaration du formulaire qui contient tout les input
-  addEventForm : FormGroup;
+  addEventForm: FormGroup;
 
   @Output() notifHide = new EventEmitter();
 
-  constructor(private eventService:EventService) { }
+  constructor(private eventService: EventService) {
+  }
 
-  hideForm:true;
-  event:Event;
+  hideForm: true;
+  event: Event;
 
-  hideFormAdd(){
+  hideFormAdd() {
     //envoi notification au parent hideForm==false;
     this.notifHide.emit(this.hideForm);
   }
 
-  save(){
+  save() {
     this.eventService.postEvent(this.addEventForm.value).subscribe();
     Swal.fire('The event has been added!', '---', 'success');
   }
@@ -44,19 +45,19 @@ export class AddEventComponent implements OnInit {
 
     this.addEventForm = new FormGroup(
       {
-        id:new FormControl(),
-        eventName:new FormControl('', [Validators.required, Validators.minLength(5)]),
-        place:new FormControl('', [Validators.required, Validators.minLength(5)]),
-        description:new FormControl('', [Validators.required, Validators.minLength(10)]),
-        guestsNumber:new FormControl('', Validators.required),
-        price:new FormControl('', Validators.required)
+        id: new FormControl(),
+        eventName: new FormControl('', [Validators.required, Validators.minLength(5)]),
+        place: new FormControl('', [Validators.required, Validators.minLength(5)]),
+        description: new FormControl('', [Validators.required, Validators.minLength(10)]),
+        guestsNumber: new FormControl('', Validators.required),
+        price: new FormControl('', Validators.required)
       }
     );
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.addEventForm.value);
-    alert('succes'+JSON.stringify(this.addEventForm.value,null,4));
+    alert('succes' + JSON.stringify(this.addEventForm.value, null, 4));
   }
 
   // //reset form works perfectly

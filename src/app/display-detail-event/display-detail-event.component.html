@@ -2,7 +2,7 @@
 
 <div class="container">
 
-  <small  class="text-muted">display-detail-event works!</small>
+  <small class="text-muted">display-detail-event works!</small>
   <h1>Edit event</h1>
   <!--Section: Block Content-->
   <section class="mb-5">
@@ -21,43 +21,49 @@
       </div>
       <div class="col-md-6">
 
-        <p class="mb-2 text-muted text-uppercase small"><small class="text-muted">ID: </small>{{this.DetailEvent.id}}</p>
+        <p class="mb-2 text-muted text-uppercase small"><small class="text-muted">ID: </small>{{this.DetailEvent.id}}
+        </p>
         <h2><strong>{{this.DetailEvent.eventName}}</strong></h2>
         <div class="form-group"><strong>
-          <input type="text" class="form-control" [(ngModel)]="DetailEvent.eventName" value="{{this.DetailEvent.eventName}}" ></strong>
+          <input type="text" class="form-control" [(ngModel)]="DetailEvent.eventName"
+                 value="{{this.DetailEvent.eventName}}"></strong>
         </div>
         <div class="table-responsive">
           <table class="table table-sm table-borderless mb-2">
             <tbody>
             <tr>
-              <th class="pl-0 w-25" scope="row">Description: </th>
+              <th class="pl-0 w-25" scope="row">Description:</th>
               <td>
                 <div class="form-group">
-                <input type="text" class="form-control" [(ngModel)]="DetailEvent.description" value="{{this.DetailEvent.description}}" >
+                  <input type="text" class="form-control" [(ngModel)]="DetailEvent.description"
+                         value="{{this.DetailEvent.description}}">
                 </div>
               </td>
             </tr>
             <tr>
-              <th class="pl-0 w-25" scope="row">Place: </th>
+              <th class="pl-0 w-25" scope="row">Place:</th>
               <td class="col-md-3">
                 <div class="form-group">
-                  <input type="text" class="form-control" [(ngModel)]="DetailEvent.place" value="{{this.DetailEvent.place}}" >
+                  <input type="text" class="form-control" [(ngModel)]="DetailEvent.place"
+                         value="{{this.DetailEvent.place}}">
                 </div>
               </td>
             </tr>
             <tr>
-              <th class="pl-0 w-25" scope="row">Price: </th>
+              <th class="pl-0 w-25" scope="row">Price:</th>
               <td class="col-md-3">
                 <div class="form-group">
-                  <input type="number" class="form-control" [(ngModel)]="DetailEvent.price" value="{{this.DetailEvent.price}}" >
+                  <input type="number" class="form-control" [(ngModel)]="DetailEvent.price"
+                         value="{{this.DetailEvent.price}}">
                 </div>
               </td>
             </tr>
             <tr>
-              <th class="pl-0 w-25" scope="row">Participants number : </th>
+              <th class="pl-0 w-25" scope="row">Participants number :</th>
               <td class="col-md-3">
                 <div class="form-group">
-                  <input type="number" class="form-control" [(ngModel)]="DetailEvent.guestsNumber" value="{{this.DetailEvent.guestsNumber}}" >
+                  <input type="number" class="form-control" [(ngModel)]="DetailEvent.guestsNumber"
+                         value="{{this.DetailEvent.guestsNumber}}">
                 </div>
               </td>
             </tr>
@@ -65,7 +71,7 @@
           </table>
         </div>
         <hr>
-        <button type="button" class="btn btn-primary btn-md mr-1 mb-2"  (click)="update()">Update</button>
+        <button type="button" class="btn btn-primary btn-md mr-1 mb-2" (click)="update()">Update</button>
         <button type="button" class="btn btn-light btn-md mr-1 mb-2" routerLink="/event">Cancel</button>
       </div>
     </div>

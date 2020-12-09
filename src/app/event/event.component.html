@@ -1,19 +1,22 @@
 <div class="container">
   <p>event works!</p>
-  <div class="card mb-3" style="max-width: 540px;" *ngIf="evenement.eventName <= eventNameSearchInput || eventNameSearchInput==null || eventNameSearchInput==''">
+  <div class="card mb-3" style="max-width: 540px;"
+       *ngIf="evenement.eventName <= eventNameSearchInput || eventNameSearchInput==null || eventNameSearchInput==''">
     <div class="row no-gutters">
       <div class="col-md-4">
         <img src="assets/perfume.jpg" class="card-img" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title"><a [routerLink]="evenement.id">{{evenement.eventName}}</a> </h5>
+          <h5 class="card-title"><a [routerLink]="evenement.id">{{evenement.eventName}}</a></h5>
           <small class="text-muted">Description: </small>
           <p class="card-text">{{evenement.description}}</p>
           <p class="card-text"><small class="text-muted">Endroit : </small>{{evenement.place}}</p>
           <p class="card-text"><small class="text-muted">Prix : </small>{{evenement.price}}</p>
           <p class="card-text"><small class="text-muted">Nombre de participants : </small>{{evenement.guestsNumber}}</p>
-          <td><button class="btn btn-danger"style="border-radius: 20px;" (click)="delete(evenement.id)">Delete</button></td>
+          <td>
+            <button class="btn btn-danger" style="border-radius: 20px;" (click)="delete(evenement.id)">Delete</button>
+          </td>
         </div>
       </div>
     </div>

@@ -1,37 +1,38 @@
 <div class="container">
-  <small  class="text-muted">display-list-event works!</small>
+  <small class="text-muted">display-list-event works!</small>
   <br><br>
   <form>
-    <div class="form-group" >
-      <input name="eventNameSearch" type="text" class="form-control" placeholder="Search event .." [(ngModel)]="eventNameSearch">
+    <div class="form-group">
+      <input name="eventNameSearch" type="text" class="form-control" placeholder="Search event .."
+             [(ngModel)]="eventNameSearch">
     </div>
   </form>
 
-    <button class="btn btn-success" (click)="showForm()" >Add Event</button>
-<!--   Form add Event  -->
-    <app-add-event *ngIf="!hideForm"
-                   (notifHide)="hideFormAdd()"
+  <button class="btn btn-success" (click)="showForm()">Add Event</button>
+  <!--   Form add Event  -->
+  <app-add-event *ngIf="!hideForm"
+                 (notifHide)="hideFormAdd()"
+  >
+  </app-add-event>
+  <!--  (eventSaveProduct)="pushProduct($event)"-->
+
+  <!-- Créer plusieurs objets -->
+  <div class="row">
+    <app-event *ngFor="let e of listEvent" [evenement]="e"
+               [eventNameSearchInput]="eventNameSearch"
     >
-    </app-add-event>
-<!--  (eventSaveProduct)="pushProduct($event)"-->
+    </app-event>
+  </div>
 
-    <!-- Créer plusieurs objets -->
-    <div class="row">
-      <app-event *ngFor="let e of listEvent" [evenement]="e"
-                 [eventNameSearchInput]="eventNameSearch"
-      >
-      </app-event>
-    </div>
+  <!--  &lt;!&ndash; Créer plusieurs objets &ndash;&gt;-->
+  <!--  <div class="row">-->
+  <!--    <app-product *ngFor="let p of listProduct" [product]="p"-->
+  <!--                 (notification)="incrementLike($event)"-->
+  <!--                 [priceMaxInput]="priceMax"-->
+  <!--                 (notificationDecrement)="decrementQuantity($event)">-->
 
-<!--  &lt;!&ndash; Créer plusieurs objets &ndash;&gt;-->
-<!--  <div class="row">-->
-<!--    <app-product *ngFor="let p of listProduct" [product]="p"-->
-<!--                 (notification)="incrementLike($event)"-->
-<!--                 [priceMaxInput]="priceMax"-->
-<!--                 (notificationDecrement)="decrementQuantity($event)">-->
-
-<!--    </app-product>-->
-<!--  </div>-->
+  <!--    </app-product>-->
+  <!--  </div>-->
 
 
   <br><br><br>

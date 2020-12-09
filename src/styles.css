@@ -2,10 +2,10 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 
-.container{
+.container {
   margin-top: 50px;
 }
 
-.form-control,.btn{
+.form-control, .btn {
   border-radius: 20px;
 }

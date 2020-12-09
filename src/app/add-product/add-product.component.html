@@ -1,12 +1,13 @@
 <div class="container">
-  <small  class="text-muted">add-product works!</small>
+  <small class="text-muted">add-product works!</small>
   <h1>Add Product</h1>
 
   <form #form="ngForm">
 
     <!--Product name-->
     <div class="form-group">
-      <input #j="ngModel" minlength="8" pattern="[a-zA-Z ]*" type="text" name="productName" class="form-control" placeholder="Product name" [(ngModel)]="product.productName" required>
+      <input #j="ngModel" minlength="8" pattern="[a-zA-Z ]*" type="text" name="productName" class="form-control"
+             placeholder="Product name" [(ngModel)]="product.productName" required>
     </div>
     <div class="alert alert-danger" *ngIf="j.invalid && j.touched ">
       <div *ngIf="j.errors.required">Product name is required</div>
@@ -16,7 +17,8 @@
 
     <!--Product category-->
     <div class="form-group">
-      <input #c="ngModel" minlength="8" pattern="[a-zA-Z ]*" type="text" name="productCategory" class="form-control" placeholder="Product category" [(ngModel)]="product.category" required>
+      <input #c="ngModel" minlength="8" pattern="[a-zA-Z ]*" type="text" name="productCategory" class="form-control"
+             placeholder="Product category" [(ngModel)]="product.category" required>
     </div>
     <div class="alert alert-danger" *ngIf="c.invalid && c.touched ">
       <div *ngIf="c.errors.required">Product category is required</div>
@@ -26,7 +28,8 @@
 
     <!--Product desc-->
     <div class="form-group">
-      <input #d="ngModel" minlength="8" pattern="[a-zA-Z ]*" type="text" name="productDescription" class="form-control" placeholder="Product description" [(ngModel)]="product.description" required>
+      <input #d="ngModel" minlength="8" pattern="[a-zA-Z ]*" type="text" name="productDescription" class="form-control"
+             placeholder="Product description" [(ngModel)]="product.description" required>
     </div>
     <div class="alert alert-danger" *ngIf="d.invalid && d.touched ">
       <div *ngIf="d.errors.required">Product description is required</div>
@@ -36,25 +39,27 @@
 
     <!--Product quantity-->
     <div class="form-group">
-      <input #k="ngModel" type="number" name="productQuantity" class="form-control" placeholder="Product quantity" [(ngModel)]="product.quantity" required>
+      <input #k="ngModel" type="number" name="productQuantity" class="form-control" placeholder="Product quantity"
+             [(ngModel)]="product.quantity" required>
     </div>
     <div class="alert alert-danger" *ngIf="k.invalid && k.touched ">
       <div *ngIf="k.errors.required">Product quantity is required</div>
     </div>
     <div class="alert alert-danger" *ngIf="k.value<10">
-      <div>The stock must contain 10 products </div>
+      <div>The stock must contain 10 products</div>
     </div>
 
     <!--price-->
     <div class="form-group">
-      <input #p="ngModel" type="number" name="productPrice" class="form-control" placeholder="Product price" [(ngModel)]="product.price" required>
+      <input #p="ngModel" type="number" name="productPrice" class="form-control" placeholder="Product price"
+             [(ngModel)]="product.price" required>
     </div>
     <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
       Price is required
     </div>
 
     <div class="alert alert-danger" *ngIf="p.value<0">
-      <div> Price > 0 </div>
+      <div> Price > 0</div>
     </div>
 
 

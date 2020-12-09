@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 // import {Component, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../../model/product';
 import {ProductService} from '../shared/product.service';
+
 // import {EventEmitter} from 'events';
 
 @Component({
@@ -17,16 +18,17 @@ export class DisplayListProductComponent implements OnInit {
 
   listProduct: Product[];
 
-  deleteId:number;
+  deleteId: number;
 
 
   title: string;
-  priceMax:number;
+  priceMax: number;
 
   //button hide form
-  hideForm:boolean;
+  hideForm: boolean;
+
   //show form
-  showForm(){
+  showForm() {
     this.hideForm = this.hideForm != true;
     // if (this.hideForm==true){
     //   this.hideForm=false;
@@ -40,35 +42,29 @@ export class DisplayListProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.hideForm=true;
+    this.hideForm = true;
     this.title = 'Product list';
     // this.listProduct = this.serviceProduct.getProducts();
     this.serviceProduct.getProductsWS().subscribe(
-      (data:Product[])=>this.listProduct=data
+      (data: Product[]) => this.listProduct = data
     );
 
   };
 
-  incrementLike(product:Product){
+  incrementLike(product: Product) {
     let i = this.listProduct.indexOf(product);
     this.listProduct[i].likes++;
   }
 
-  decrementQuantity(product:Product){
+  decrementQuantity(product: Product) {
     let i = this.listProduct.indexOf(product);
     this.listProduct[i].quantity--;
   }
 
-  pushProduct(p:Product){
+  pushProduct(p: Product) {
     this.listProduct.push(p);
-    this.hideForm=true;
+    this.hideForm = true;
   }
-
-
-
-
-
-
 
 
   // deleteProduct(deleteId){
@@ -98,6 +94,7 @@ export class DisplayListProductComponent implements OnInit {
   // }
 
 }
+
 //
 // sendNotif(){
 //   this.notification.emit(this.p);

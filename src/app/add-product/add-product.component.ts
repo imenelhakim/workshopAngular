@@ -10,14 +10,15 @@ import Swal from 'sweetalert2';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor(private productService:ProductService) { }
+  constructor(private productService: ProductService) {
+  }
 
-  id:number;
+  id: number;
 
   listProduct: Product[];
 
   //decla objet vide
-  product:Product;
+  product: Product;
 
   @Output() eventSaveProduct = new EventEmitter<Product>();
 
@@ -26,8 +27,8 @@ export class AddProductComponent implements OnInit {
   //   this.eventSaveProduct.emit(this.product);
   // }
 
-  save(){
-    this.product.likes=0;
+  save() {
+    this.product.likes = 0;
     this.productService.postProduct(this.product).subscribe();
     Swal.fire('The product has been added!', '---', 'success');
   }
@@ -37,28 +38,28 @@ export class AddProductComponent implements OnInit {
 
     this.product = new Product();
 
-  //   //liste products
-  //   this.listProduct = [
-  //     {
-  //       id: 1,
-  //       productName: 'bouquet de rose',
-  //       category: 'Mariage',
-  //       description: 'Ce bouquet illuminera votre soirée',
-  //       price: 125,
-  //       quantity: 150,
-  //       likes: 0
-  //     },
-  //     {
-  //       id: 2,
-  //       productName: 'bouquet de tulipes',
-  //       category: 'Anniversaire',
-  //       description: 'Ce bouquet apportera de la joix',
-  //       price: 50,
-  //       quantity: 8,
-  //       likes: 0
-  //     }
-  //   ];
-  //
+    //   //liste products
+    //   this.listProduct = [
+    //     {
+    //       id: 1,
+    //       productName: 'bouquet de rose',
+    //       category: 'Mariage',
+    //       description: 'Ce bouquet illuminera votre soirée',
+    //       price: 125,
+    //       quantity: 150,
+    //       likes: 0
+    //     },
+    //     {
+    //       id: 2,
+    //       productName: 'bouquet de tulipes',
+    //       category: 'Anniversaire',
+    //       description: 'Ce bouquet apportera de la joix',
+    //       price: 50,
+    //       quantity: 8,
+    //       likes: 0
+    //     }
+    //   ];
+    //
   };
 
 }

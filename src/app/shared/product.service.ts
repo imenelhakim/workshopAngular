@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Product} from '../../../model/product';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
@@ -8,11 +8,12 @@ import {Observable} from 'rxjs';
 })
 export class ProductService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   listProductShare: Product[];
 
-  getProducts(){
+  getProducts() {
     this.listProductShare = [
       {
         id: 1,
@@ -36,22 +37,24 @@ export class ProductService {
     return this.listProductShare;
   }
 
-  url='http://localhost:3000/products/';
+  url = 'http://localhost:3000/products/';
 
   //affichage
-  getProductsWS(){
+  getProductsWS() {
     return this.http.get<Product[]>(this.url);
   }
 
   //suppression
-  deleteProductWS(id){
-    return this.http.delete(this.url+id);
-  }
-  //ajout
-  postProduct(p:Product){
-    return this.http.post<Product>(this.url,p);
+  deleteProductWS(id) {
+    return this.http.delete(this.url + id);
   }
 
-  searchProduct(){}
+  //ajout
+  postProduct(p: Product) {
+    return this.http.post<Product>(this.url, p);
+  }
+
+  searchProduct() {
+  }
 
 }

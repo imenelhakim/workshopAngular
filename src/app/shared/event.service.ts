@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Event} from '../../../model/event';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Product} from '../../../model/product';
@@ -12,6 +12,7 @@ import {error} from '@angular/compiler/src/util';
 export class EventService {
 
   listEventShare: Event[];
+
   errorHandler(error) {
     debugger
 
@@ -27,7 +28,8 @@ export class EventService {
     return throwError(errorMessage);
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   // getEvents(){
   //   this.listEventShare = [
@@ -43,31 +45,36 @@ export class EventService {
   //   return this.listEventShare;
   // }
 
-  url='http://localhost:3000/events/';
+  url = 'http://localhost:3000/events/';
 
   //suppression
-  deleteEventWS(id){
-    return this.http.delete(this.url+id);
+  deleteEventWS(id) {
+    return this.http.delete(this.url + id);
   }
+
   //ajout
-  postEvent(e:Event){
-    return this.http.post<Event>(this.url,e);
+  postEvent(e: Event) {
+    return this.http.post<Event>(this.url, e);
   }
+
   //afichage liste
-  getEventsWS(){
+  getEventsWS() {
     return this.http.get<Event[]>(this.url);
   }
+
   //affichage détail
   getEventWS(id): Observable<Event> {
     return this.http.get<Event>(this.url + id)
       .pipe(
         catchError(this.errorHandler)
-      )
+      );
   }
+
   //modification
   putEvent(event): Observable<Event> {
     return this.http.put<Event>(this.url + event.id, event);
   }
 
-  searchEvent(){}
+  searchEvent() {
+  }
 }
