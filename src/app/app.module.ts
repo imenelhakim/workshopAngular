@@ -17,6 +17,7 @@ import {DisplayListEventComponent} from './display-list-event/display-list-event
 import {AddEventComponent} from './add-event/add-event.component';
 import {DisplayDetailEventComponent} from './display-detail-event/display-detail-event.component';
 import {HttpClientModule} from '@angular/common/http';
+import { DisplayDetailProductComponent } from './display-detail-product/display-detail-product.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {HttpClientModule} from '@angular/common/http';
     DisplayListEventComponent,
     AddEventComponent,
     DisplayDetailEventComponent,
+    DisplayDetailProductComponent,
   ],
   imports: [
     BrowserModule,

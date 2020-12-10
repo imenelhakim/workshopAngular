@@ -40,7 +40,7 @@
   "events": [
     {
       "id": 1,
-      "eventName": "Formation savon",
+      "eventName": "Formation de savon",
       "place": "nabeul",
       "description": "la ville des roses vous offre une expérience unique!",
       "guestsNumber": 15,
